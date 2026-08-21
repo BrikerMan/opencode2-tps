@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "name": "opencode2-tps",
+  "version": "0.1.0",
+  "description": "OpenCode V2 TUI plugin: live TPS / avg TPS / TTFT meter in the prompt footer",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BrikerMan/opencode2-tps.git"
+  },
+  "homepage": "https://github.com/BrikerMan/opencode2-tps#readme",
+  "bugs": "https://github.com/BrikerMan/opencode2-tps/issues",
+  "license": "MIT",
+  "author": "Eliyar Eziz (https://github.com/BrikerMan)",
+  "keywords": [
+    "opencode",
+    "opencode-v2",
+    "tui",
+    "plugin",
+    "tps",
+    "llm",
+    "observability"
+  ],
+  "exports": {
+    "./tui": "./tui.js"
+  },
+  "files": [
+    "tui.js",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "lint": "biome check .",
+    "lint:fix": "biome check --write .",
+    "format": "biome format --write .",
+    "check": "bun run lint && bun build tui.js --outdir /tmp/tps-build --external \"*\""
+  },
+  "peerDependencies": {
+    "@opencode-ai/plugin": ">=0.0.0-next-17430",
+    "@opentui/solid": "*",
+    "solid-js": "^1.9.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.5.9"
+  }
+}
