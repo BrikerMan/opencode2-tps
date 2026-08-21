@@ -19,7 +19,24 @@ freezes between steps, AVG keeps counting the whole turn.
 
 ## Install
 
-Single file, no build step.
+One line:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/BrikerMan/opencode2-tps/main/install.sh | bash
+```
+
+The installer downloads the plugin and **merges** it into your existing
+`~/.config/opencode/cli.json` — other plugins and settings are preserved
+(a `.bak` backup is kept). Idempotent: safe to re-run.
+
+GitHub raw unreachable? Point it at a mirror:
+
+```bash
+OPENCODE2_TPS_BASE=https://ghproxy.net/https://raw.githubusercontent.com/BrikerMan/opencode2-tps/main \
+  curl -fsSL https://ghproxy.net/https://raw.githubusercontent.com/BrikerMan/opencode2-tps/main/install.sh | bash
+```
+
+### Manual install
 
 ```bash
 mkdir -p ~/.config/opencode/plugins/tui
